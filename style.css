@@ -1,0 +1,563 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Active pages */
+.page {
+  display: none;
+}
+
+.page.page-active {
+  display: block;
+}
+
+.navbar-brand i {
+  font-size: 22px;
+}
+
+#sidebar {
+  position: relative; /* Default position */
+  padding: 0 20px 0px;
+  transition: all 0.3s;
+}
+
+#sidebar .main-div {
+  max-height: calc(100vh - 100px);
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+#sidebar.sidebaractive .main-div {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sidebar.sidebaractive ul li a span {
+  display: none !important;
+}
+
+#sidebar .sidebar-header {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#sidebar ul.components {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#sidebar ul li {
+  padding: 20px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#sidebar ul li.active {
+  background-color: #35c2c1;
+  position: relative;
+}
+
+#sidebar ul li.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -32px;
+  width: 5px;
+  height: 100%;
+  background-color: #35c2c1;
+  border-radius: 5px;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+#sidebar.active ul li.active::before {
+  left: -38px;
+}
+
+#sidebar ul li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+}
+
+#sidebar ul li.active a {
+  color: white;
+}
+
+#sidebar ul li a i {
+  font-size: 18px;
+}
+
+#sidebar .logout-btn {
+  width: 70%;
+  height: 50px;
+  border: 3px solid #35c2c1;
+  color: #35c2c1;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#sidebar.sidebaractive .logout-btn {
+  display: none;
+}
+
+#sidebarToggle {
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+}
+
+.content h2 {
+  color: #004f83;
+}
+
+.form-inline {
+  width: 30%;
+}
+
+.form-inline .form-control {
+  position: relative;
+}
+
+.form-inline .bx-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Content */
+.progress-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.progress-circle-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  clip: rect(0, 200px, 200px, 100px);
+}
+
+.half-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid #0d6efd;
+  clip: rect(0, 100px, 200px, 0);
+  transition: transform 0.3s ease;
+}
+
+.progress-circle-left,
+.progress-circle-right {
+  transform: rotate(0deg);
+  background: transparent;
+}
+
+.progress-circle-right {
+  right: 0;
+}
+
+.progress-circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #0d6efd;
+  font-size: 24px;
+  text-align: center;
+}
+
+.progress-percent {
+  display: inline-block;
+}
+
+.charts {
+  border-radius: 10px;
+}
+
+/* Media query */
+@media (max-width: 768px) {
+  /* Add your responsive styles here */
+}
+
+@media only screen and (max-width: 1200px) {
+  #sidebar .main-div {
+    width: 250px !important;
+    max-height: 100% !important;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 10px;
+    background-color: white;
+    border-right: 1px solid rgba(0, 0, 0, 0.199);
+  }
+
+  #sidebar.sidebaractive .main-div,
+  #sidebar.sidebaractive {
+    left: 0;
+  }
+
+  #sidebar.sidebaractive .logout-btn {
+    display: block !important;
+  }
+
+  #sidebar.sidebaractive ul li a span {
+    display: block !important;
+  }
+
+  #sidebar ul li.sidebaractive::before {
+    left: -27px !important;
+  }
+}
+
+/* Charts */
+.sec-2 .heading {
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+/* Page 2 hostel details */
+.page-2 .user-image {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: rgba(211, 223, 245, 0.15);
+}
+
+.page-2 .upload {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-2 form input,
+.input-group .form-control {
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  border: 1px solid #ccc;
+  outline-color: #ccc;
+}
+
+.input-group .form-control {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.input-group .form-control.text-center {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.input-group .form-control.text-center span {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.page button {
+  height: 50px;
+  width: 200px;
+  color: #35c2c1;
+  border: 2px solid #35c2c1;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page button.submit {
+  width: 400px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #35c2c1;
+  border: none;
+  outline-color: #ccc;
+  margin-left: 30px;
+}
+
+/* page 3 styling  */
+
+.page-3 .row {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.page-3 .card {
+  background-color: rgba(128, 128, 128, 0.121) !important;
+  color: red;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  padding: 30px !important;
+}
+
+.page-3 .card .icon {
+  background-color: rgba(128, 128, 128, 0.624);
+  height: 100%;
+  width: 100%;
+}
+
+.page-3 .col-6:nth-child(1) .card .icon {
+  mask: url("/images/svgs/Vector.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/Vector.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(2) .card .icon {
+  mask: url("/images/svgs/2.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/2.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(3) .card .icon {
+  mask: url("/images/svgs/4.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/4.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(4) .card .icon {
+  mask: url("/images/svgs/5.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/5.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(5) .card .icon {
+  mask: url("/images/svgs/3.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/3.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(6) .card .icon {
+  mask: url("/images/svgs/6.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/6.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(7) .card .icon {
+  mask: url("/images/svgs/7.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/7.svg") no-repeat center / contain;
+}
+
+.page-3 .col-6:nth-child(8) .card .icon {
+  mask: url("/images/svgs/8.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/svgs/8.svg") no-repeat center / contain;
+}
+
+.page-3 .card svg {
+  fill: red !important;
+}
+
+.page-3 h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-top: 15px;
+}
+
+/* .page-3 .card:hover {
+  background: #35c2c1 !important;
+  transition-duration: 0.3s;
+} */
+
+/* .page-3 .card:hover .icon {
+  background-color: white !important;
+} */
+
+.page-3 .card.card-selected {
+  background: #35c2c1 !important;
+}
+.page-3 .card.card-selected .icon {
+  background-color: white !important;
+}
+
+@media screen and (max-width: 980px) {
+  /* .page-3 .card:hover {
+    background: none;
+    transition-duration: 0.3s;
+  } */
+
+  .page-3 .row {
+    max-width: 100% !important;
+  }
+}
+
+/* page 4 styling goes here */
+.page-4 .mx-auto {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.page-4 .head p {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: sans-serif;
+  color: gray;
+}
+
+.page-4 .head h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.page-4 h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 4px;
+}
+
+.page-4 p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.page-4 .card {
+  background-color: #f7f8f9;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+/* .page-4 .btn {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.page-4 .btn#save  {
+  padding: 10px 90px !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+} */
+
+@media screen and (max-width: 980px) {
+  .page-4 .mx-auto {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .page-4 .row .col-4 {
+    background-color: #f7f8f9;
+    border-radius: 10px;
+    padding: 13px 0;
+  }
+}
+
+/* page 5 styling  */
+.page-5 .table th,
+.page-5 .table td {
+  vertical-align: middle;
+}
+
+.page-5 table thead tr {
+  padding: 10px 0;
+}
+
+.page-5 table tbody tr th,
+.page-5 table tbody tr td {
+  padding: 25px 0;
+}
+.page-5 button.btn-status {
+  height: 50px;
+  width: 150px;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+  background-color: #35c2c1;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-5 button.btn-status#active {
+  color: black !important;
+  background-color: #f5f6fa !important;
+  border: 1px solid #b9b9b9;
+}
+
+.page-5 button.btn-status#cancel {
+  background-color: #e8776f !important;
+}
+
+/* page 6 styling */
+.page-6.page-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  height: auto;
+  width: 100%;
+  /* border: 1px solid black; */
+  padding: 20px;
+  box-shadow:-3px -1px 8px 0px #dedede;
+  -webkit-box-shadow: -3px -1px 8px 0px #dedede;
+  -moz-box-shadow: -3px -1px 8px 0px #dedede;;
+}
+
+.page > h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 40px;
+}
+
+.page-6 .payment-details {
+  max-width: 900px;
+}
+
+.card-body p {
+  margin: 0;
+}
+
+.card-body .d-flex {
+  margin-bottom: 10px;
+}
+
+.text-success {
+  color: #35c2c1 !important;
+}
+
+.row.g-0.align-items-center .col-md-4 {
+  /* flex: 0 0 auto; */
+  width: 100%; /* Adjust this value to ensure image size matches the second example */
+  height: 100%;
+}
+
+.col-md-8 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.img-fluid.rounded-start {
+  border-radius: 0; /* Remove rounded corners if the second image doesn't have them */
+}
+

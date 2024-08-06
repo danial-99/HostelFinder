@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Responsive Sidebar and Navbar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a class="navbar-brand" href="#">
+        <i class="bx"><img src="./images/logo.png" alt=""></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0 ml-auto position-relative">
+          <input class="form-control w-100 rounded-pill" type="search" placeholder="Search..." aria-label="Search">
+          <i class="bx bx-search position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%);"></i>
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bx bx-bell"></i> Notifications</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img src="./images/profile.jpeg" class="rounded-circle" alt="Profile" width="30" height="30"> Anna Jhon
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Log out</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="d-xl-flex">
+      <nav id="sidebar" class="">
+        <div class="sidebar-header d-flex align-items-center justify-content-between py-2">
+          <i class="bx bx-menu" id="sidebarToggle"></i>
+        </div>
+        <div class="main-div d-flex flex-column justify-content-between align-items-center">
+          <div>
+            <ul class="list-unstyled components">
+              <li class="btn active">
+                <a href="#" class="d-flex align-items-center" data-target="#overview">
+                  <i class="bx bx-pie-chart-alt-2"></i>
+                  <span class="ml-4 d-none d-md-inline">Overview</span>
+                </a>
+              </li>
+
+              <li class="btn">
+                <a href="#" class="d-flex align-items-center" data-target="#hosteldetails">
+                  <i class="bx "><img src="./images/Frame 473.png" alt=""></i>
+                  <span class="ml-4 d-none d-md-inline">Hostel Details</span>
+                </a>
+              </li>
+
+              <li class="btn">
+                <a href="#" class="d-flex align-items-center" data-target="#facilities">
+                  <i class="bx"><img src="./images/2. tickets.png" alt=""></i>
+                  <span class="ml-4 d-none d-md-inline">Facilities</span>
+                </a>
+              </li>
+              <li class="btn">
+                <a href="#" class="d-flex align-items-center" data-target="#Bookingrequests">
+                  <i class="bx "><img src="./images/4. contacts.png" alt=""></i>
+                  <span class="ml-4 d-none d-md-inline">Booking Requests</span>
+                </a>
+              </li>
+              <li class="btn">
+                <a href="#" class="d-flex align-items-center" data-target="#Managebookings">
+                  <i class="bx"><img src="./images/5. agents.png" alt=""></i>
+                  <span class="ml-4 d-none d-md-inline">Booking Details</span>
+                </a>
+              </li>
+
+              <li class="btn">
+                <a href="#" class="d-flex align-items-center" data-target="#payments">
+                  <i class="bx"><img src="./images/6. articles.png" alt=""></i>
+                  <span class="ml-4 d-none d-md-inline">Payments</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-100 mb-3">
+            <button class="logout-btn">Logout</button>
+          </div>
+        </div>
+      </nav>
+      <div class="container-lg px-4 py-5 w-100 " style="background-color: #f5f6fa;">
+        <div class="page page-active" id="overview">
+          <h3>Welcome Israr👏</h3>
+          <div class="mt-5">
+            <div class="row">
+              <div class="col-12 col-xl-3 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                <div class="card mx-auto px-3 py-2 w-100 h-100 charts lg:p-0 p-4 ">
+                  <h3 class="text-center h5" style="text-wrap: nowrap;">Hostel Space</h3>
+                  <div class="progress-circle my-2 mx-auto" data-progress="95">
+                    <div class="progress-circle-inner">
+                      <div class="progress-circle-left half-circle"></div>
+                      <div class="progress-circle-right half-circle"></div>
+                      <div class="progress-circle-content">
+                        <span class="progress-percent">95%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="align-self-baseline">
+                    <li>Booked</li>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-5 col-lg-8 mt-lg-0 mt-4">
+                <div class="card px-1 py-2  charts w-100 h-100 lg:p-0 p-4">
+                  <h3 class="h5" style="text-wrap: nowrap;">Hostelite Management</h3>
+                  <div class="w-100">
+                    <canvas id="myChart" class="w-100"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-4 mt-xl-0 mt-4">
+                <div class="card px-1 py-2 charts w-100 lg:p-0 p-4">
+                  <h3 class="h5" style="text-wrap: nowrap;">Booking Requests</h3>
+                  <div class="">
+                    <canvas class="" id="bookingRequestsChart" height="250"></canvas>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- row 2 -->
+            <div class="sec-2 row my-5">
+              <div class="col-12 col-xl-4 col-md-6">
+                <div class="card p-4 charts">
+                  <div class="row align-items-center">
+                    <div class="col-6 d-flex flex-column">
+                      <h3 class="heading">Students/Professional Inflow</h3>
+                      <h3 class="" style="font-size: 22px; font-weight: 500;">2,643</h3>
+                      <h3 class="" style="font-size: 16px; text-wrap:nowrap ;">1.10% Since yesterday</h3>
+                    </div>
+                    <div class="col-6 ">
+                      <canvas id="newChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-4 col-md-6 mt-lg-0">
+                <div class="card p-4 charts ">
+                  <div class="row align-items-center">
+                    <div class="col-6 d-flex flex-column">
+                      <h3 class="heading">User Retention</h3>
+                      <h3 class="" style="font-size: 22px; font-weight: 500;">2,643</h3>
+                      <h3 class="" style="font-size: 16px; text-wrap:nowrap ;">1.10% Since yesterday</h3>
+                    </div>
+                    <div class="col-6 ">
+                      <canvas id="newChart2"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-4 col-6 mt-lg-0 mt-4">
+                <div class="card p-4 charts ">
+                  <div class="row align-items-center">
+                    <div class="col-6 d-flex flex-column">
+                      <h3 class="heading">User Retention</h3>
+                      <h3 class="" style="font-size: 22px; font-weight: 500;">2,643</h3>
+                      <h3 class="" style="font-size: 16px; text-wrap:nowrap ;">1.10% Since yesterday</h3>
+                    </div>
+                    <div class="col-6 ">
+                      <canvas id="newChart3"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- row 3 -->
+            <div class="row">
+              <div class="col-12 col-lg-7">
+                <div class="card charts h-100 lg:p-0 p-4">
+                  <canvas id="bookingRateChart"></canvas>
+                </div>
+              </div>
+              <div class="col-12 col-lg-5 mt-lg-0 mt-4">
+                <div class="card charts h-100">
+                  <canvas id="myDonutChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- page 2 hostel details form  -->
+        <div class="page page-2 bg-white shadow-lg rounded w-100 p-4" id="hosteldetails">
+          <div class="d-flex flex-column justify-content-center align-items-center w-100">
+            <div class="mb-4 d-flex flex-column justify-content-center align-items-center">
+              <div class="user-image">
+                <input type="file" class=" d-none" id="uploadImages" multiple>
+                <label class="mt-3" for="uploadImages" class="text-center">
+                  <i class="bx bx-camera h3 "></i>
+                </label>
+              </div>
+              <h3 class="mt-2 upload">Upload Image</h3>
+            </div>
+            <form action="" class="w-100 d-flex flex-column">
+              <div class="row w-100">
+                <div class="col-12 col-sm-6">
+                  <label for="hostel-name">Hostel Name</label>
+                  <input class="w-100  form-control" name="hostel-name" id="hostel-name" type="text"
+                    placeholder="check">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="owner-name">Owner Name</label>
+                  <input class="w-100  form-control" name="owner-name" id="owner-name" type="text" placeholder="check">
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                  <label for="hostel-location">Hostel Location</label>
+                  <input class="w-100  form-control" name="hostel-location" id="hostel-location" type="text"
+                    placeholder="check">
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                  <label for="hostel-type">Hostel Type</label>
+                  <input class="w-100  form-control" name="hostel-type" id="hostel-type" type="text"
+                    placeholder="check">
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                  <label for="hostel-location-2">Hostel Location</label>
+                  <input class="w-100  form-control" name="hostel-location-2" id="hostel-location-2" type="text"
+                    placeholder="check">
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                  <label for="hostel-type-2">Hostel Type</label>
+                  <input class="w-100  form-control" name="hostel-type-2" id="hostel-type-2" type="text"
+                    placeholder="check">
+                </div>
+                <!-- New Input Areas -->
+                <div class="col-12 col-sm-6 mt-4">
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-plaintext" placeholder="Enter room details" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                  <div class="input-group">
+                    <input type="file" class="d-none" id="uploadImages" multiple>
+                    <label for="uploadImages" class="form-control text-center bg-light">
+                      Upload Images <span class="text-primary">+</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="align-self-end d-flex justify-content-end align-content-center px-4 mt-4 w-100">
+                <button>Cancel</button>
+                <button class="submit" type="submit">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- page 3 facilities -->
+        <div class="page page-3" id="facilities">
+          <div class="facilities-title border-bottom py-3">
+            <h3>Select what you Provide</h3>
+          </div>
+          <div class="row mt-4">
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100">
+              <div class="card card-selected d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>Security</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>3 times meal</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>Fiber/Wifi</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>24/7 Light</h3>
+            </div>
+
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100 mt-5">
+              <div class="card card-selected d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>Laundry
+                space</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100 mt-5">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>AC/Heater</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100 mt-5">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>Geyser</h3>
+            </div>
+            <div class="col-6 col-md-3 d-flex flex-column justify-content-center align-items-center w-100 mt-5">
+              <div class="card d-flex justify-content-center align-items-center p-4">
+                <div class="icon"></div>
+              </div>
+              <h3>Geyser</h3>
+            </div>
+            <div class="align-self-end d-flex justify-content-end align-content-center px-4 mt-4 w-100">
+              <button>Cancel</button>
+              <button class="submit" type="submit">Save</button>
+            </div>
+          </div>
+        </div>
+        <!-- page-4 Booking Requests -->
+        <div class="page page-4 bg-white shadow-lg rounded w-100 mx-auto p-4" id="Bookingrequests">
+          <div class="mx-auto d-flex flex-column align-items-baseline">
+            <div class="head d-flex justify-content-center align-items-center w-full mb-4">
+              <img src="./images/hostel.png" alt="">
+              <div class="d-flex flex-column align-items-baseline ml-3">
+                <h3>Akasia Hostel</h3>
+                <p>Boys Hostel</p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <i class="bx bx-location-plus h5 mr-1 mt-2"></i>
+                  <p class="mt-">Figueroa, Los Angeles</p>
+                </div>
+              </div>
+            </div>
+            <div class="row w-100 mb-3">
+              <div class="col-4 w-100 ">
+                <div class="card border d-flex flex-column justify-content-center align-items-center py-3 rounded">
+                  <h3 class="text-nowrap">Check in</h3>
+                  <p class="text-nowrap">12 June 2023</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card border d-flex flex-column justify-content-center align-items-center py-3 rounded">
+                  <h3 class="text-nowrap">Check in</h3>
+                  <p class="text-nowrap">12 June 2023</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card border d-flex flex-column justify-content-center align-items-center py-3 rounded">
+                  <h3 class="text-nowrap">Room</h3>
+                  <p class="text-nowrap">Single Bed</p>
+                </div>
+              </div>
+            </div>
+            <div class="row w-100 mb-3">
+              <div class="col-4">
+                <div class="card border d-flex flex-column justify-content-center align-items-center py-3 rounded">
+                  <h3 class="text-nowrap">Service</h3>
+                  <p class="text-nowrap">Laundry</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div
+                  class="card border d-flex flex-column justify-content-center align-items-center py-3 rounded">
+                  <h3 class="text-nowrap">Meal</h3>
+                  <p class="text-nowrap">Self Help</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div
+                  class="card border d-flex flex-column justify-content-center align-items-center p-3 shadow-sm rounded">
+                  <h3 class="text-nowrap">Bath</h3>
+                  <p class="text-nowrap">Attach Bath</p>
+                </div>
+              </div>
+            </div>
+            <div class="row w-100 mb-3 border bg-light rounded">
+              <div class="col-4">
+                <div
+                  class="card border-0 bg-transparent d-flex flex-column justify-content-center align-items-center py-3 ">
+                  <div class="d-flex flex-column justify-content-center align-items-center w-100">
+                    <h3 class="text-nowrap">Name</h3>
+                    <p class="text-nowrap">Ali Tareen Khan</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div
+                  class="card border-0 bg-transparent d-flex flex-column justify-content-center align-items-center py-3">
+                  <div class="d-flex flex-column justify-content-center align-items-center w-100"
+                    style="border-right: 1px solid #B3B2B3; border-left: 1px solid #B3B2B3 ;">
+                    <h3 class="text-nowrap">Contact Details</h3>
+                    <p class="text-nowrap">aliktareen@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div
+                  class="card border-0 bg-transparent d-flex flex-column justify-content-center align-items-center py-3 ">
+                  <div class=" d-flex flex-column justify-content-center align-items-center w-100">
+                    <h3 class="text-nowrap">Details</h3>
+                    <p class="text-nowrap">X.Y.Z</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="align-self-end d-flex justify-content-end align-content-center mt-4">
+              <button type="button" class=" mr-2" >Cancel</button>
+              <button class="submit" type="submit" >Save</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- page-6 payments -->
+        <div class="page page-6" id="payments">
+          <h3>Payment Summary</h3>
+          <div class="payment-details card mb-3 border-0">
+            <div class="row">
+              <div class="col-md-5 w-100 h-100">
+                <img src="./images/payments.png" class="img-fluid " alt="Room Image">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body p-0">
+                  <h5 class="card-title">Sky Hostel</h5>
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="d-flex align-items-center mr-3">
+                      <img src="./images/icon-1.png" alt="Beds Icon">
+                      <span class="ml-2">4 Beds</span>
+                    </div>
+                    <div class="d-flex align-items-center mr-3">
+                      <img src="./images/icon-2.png" alt="Sleeps Icon">
+                      <span class="ml-2">8 Sleeps</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <img src="./images/icon-3.png" alt="Size Icon">
+                      <span class="ml-2">1,350 Sq Ft</span>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Arrival Date</p>
+                    </div>
+                    <p class="text-start">October 28, 2022</p>
+                  </div>
+                  <div class="d-flex align-items-center" style="width: 300px;">
+                    <div style="width: 150px;">
+                      <p>Departure Date</p>
+                    </div>
+                    <p class="" style="text-wrap: nowrap;">November 03, 2022</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Total Nights</p>
+                    </div>
+                    <p>6</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Rate</p>
+                    </div>
+                    <p class="text-success">$2016</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Community Fee</p>
+                    </div>
+                    <p class="text-success">$149</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Tax</p>
+                    </div>
+                    <p class="text-success">$143.25</p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div style="width: 150px;">
+                      <p>Total</p>
+                    </div>
+                    <p class="text-success">$2308.25</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ml-auto mt-5 d-flex justify-content-center align-items-center">
+              <button>back</button>
+              <button class="submit" type="submit">Accept</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- page-5 Manage Bookings -->
+        <div class="page page-5" id="Managebookings">
+          <table class="table border rounded">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Room No</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col">DATE</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">STATUS</th>
+              </tr>
+            </thead>
+            <tbody class="text-center align-middle">
+              <tr class="align-items-center">
+                <th scope="row">002</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td><button class="btn-status">Completed</button></td>
+              </tr>
+              <tr class="align-items-center">
+                <th scope="row">113</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td><button class="btn-status" id="active">Active</button></td>
+              </tr>
+              <tr class="align-items-center">
+                <th scope="row">017</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td>
+                  <button class="btn-status" id="cancel">Cancel</button>
+                </td>
+              </tr>
+              <tr class="align-items-center">
+                <th scope="row">017</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td>
+                  <button class="btn-status">Cancel</button>
+                </td>
+              </tr>
+
+              <tr class="align-items-center">
+                <th scope="row">017</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td>
+                  <button class="btn-status" id="cancel">Cancel</button>
+                </td>
+              </tr>
+              <tr class="align-items-center">
+                <th scope="row">017</th>
+                <td>089 Kutch Green Apt. 448</td>
+                <td>14 Feb 2019</td>
+                <td>Double Bedded Attach Bath</td>
+                <td>
+                  <button class="btn-status" id="active">Cancel</button>
+                </td>
+              </tr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- </div>
+  </div> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="chart2.js"></script>
+<script src="script.js"></script>
+<script src="chart.js"></script>
+<script src="pie-chart.js"></script>
+<script src="chart-3.js"></script>
+
+</html>
